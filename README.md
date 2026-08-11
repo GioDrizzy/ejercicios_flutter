@@ -46,8 +46,6 @@ Aplicación que muestra una tarjeta de presentación con los datos personales de
 
 `Scaffold` · `AppBar` · `Column` · `Row` · `CircleAvatar` · `Text` · `Icon` · `Card` · `Container`
 
-La fotografía se presenta de forma circular y la información se organiza de manera centrada y adaptable a la pantalla.
-
 ---
 
 ### 2. 👥 Contador de personas
@@ -71,8 +69,6 @@ Aplicación destinada a llevar el conteo de personas que entran y salen de un lu
 * Condicionales.
 * `AlertDialog`
 
-El contador comienza en cero y la interfaz se actualiza inmediatamente después de cada interacción.
-
 ---
 
 ### 3. 🎂 Calculadora de edad
@@ -93,8 +89,6 @@ Aplicación que permite calcular aproximadamente la edad de una persona a partir
 * Verificar que el año sea mayor que 1900.
 * Mostrar mensajes de error.
 * Limpiar los campos.
-
-Para obtener el año actual se puede utilizar `DateTime.now().year`.
 
 **Conceptos utilizados:**
 
@@ -137,8 +131,6 @@ Los resultados se muestran utilizando dos posiciones decimales.
 * Controles de selección.
 * Formateo de resultados.
 * Actualización de la interfaz.
-
-También incluye validación del monto y un botón para reiniciar la calculadora.
 
 ---
 
@@ -213,8 +205,6 @@ Cada estado muestra un mensaje:
 * `Container`
 * `BoxDecoration`
 * `Column`
-
-El semáforo inicia en rojo y solamente una luz permanece activa a la vez.
 
 ---
 
@@ -424,59 +414,6 @@ proyecto/
 ```
 
 La carpeta `lib` contiene el código principal de la aplicación y `main.dart` corresponde al punto de entrada del proyecto.
-
----
-
-## 🚀 Instalación y ejecución
-
-### Requisitos
-
-Para ejecutar el proyecto se necesita tener instalado:
-
-* Flutter SDK
-* Dart SDK
-* Android Studio o Visual Studio Code
-* Un dispositivo físico o emulador compatible
-
-### Clonar el repositorio
-
-```bash
-git clone URL_DEL_REPOSITORIO
-```
-
-### Entrar al proyecto
-
-```bash
-cd NOMBRE_DEL_PROYECTO
-```
-
-### Instalar dependencias
-
-```bash
-flutter pub get
-```
-
-### Ejecutar la aplicación
-
-```bash
-flutter run
-```
-
----
-
-## 🔍 Verificación del proyecto
-
-Para comprobar que el proyecto no presenta problemas de análisis:
-
-```bash
-flutter analyze
-```
-
-Para ejecutar las pruebas:
-
-```bash
-flutter test
-```
 
 ---
 

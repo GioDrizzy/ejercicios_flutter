@@ -24,13 +24,13 @@ class TarjetaPresentacionScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'María Fernández',
+                  'Giovanny Bautista Castillo',
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Desarrolladora de Software',
+                  'Desarrollador de Software',
                   style: TextStyle(fontSize: 16, color: Colors.grey.shade700),
                   textAlign: TextAlign.center,
                 ),
@@ -46,13 +46,13 @@ class TarjetaPresentacionScreen extends StatelessWidget {
                       children: [
                         _InfoRow(
                           icon: Icons.phone_outlined,
-                          texto: '+1 (809) 555-1234',
+                          texto: '+1 (849)-564-2132',
                           color: colorScheme.primary,
                         ),
                         const Divider(),
                         _InfoRow(
                           icon: Icons.email_outlined,
-                          texto: 'maria.fernandez@correo.com',
+                          texto: 'Gio.bc3222@gmail.com',
                           color: colorScheme.primary,
                         ),
                         const Divider(),
@@ -67,7 +67,7 @@ class TarjetaPresentacionScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const Text(
-                  'Apasionada por la tecnología y el desarrollo móvil. '
+                  'Apasionado por la tecnología y el desarrollo móvil. '
                   'Me gusta crear aplicaciones que resuelvan problemas reales '
                   'y aprender nuevas herramientas todos los días.',
                   textAlign: TextAlign.center,

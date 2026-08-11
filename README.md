@@ -1,135 +1,505 @@
-# Ejercicios Flutter
+# 📱 Ejercicios de Tecnologías Móviles
 
-Proyecto único de Flutter con los 10 ejercicios individuales, accesibles desde
-un menú principal (`lib/main.dart`).
+Aplicación móvil desarrollada con **Flutter y Dart** como parte de la asignatura **Tecnologías Móviles**.
 
-## Contenido
+El proyecto reúne los **10 ejercicios prácticos** establecidos en la asignación, con el propósito de practicar los fundamentos del desarrollo de aplicaciones móviles utilizando Flutter y Dart.
 
-| # | Ejercicio | Archivo |
-|---|-----------|---------|
-| 1 | Tarjeta de presentación personal | `lib/screens/ex1_tarjeta_presentacion.dart` |
-| 2 | Contador de personas | `lib/screens/ex2_contador_personas.dart` |
-| 3 | Calculadora de edad | `lib/screens/ex3_calculadora_edad.dart` |
-| 4 | Calculadora de propinas | `lib/screens/ex4_calculadora_propinas.dart` |
-| 5 | Conversor de temperatura | `lib/screens/ex5_conversor_temperatura.dart` |
-| 6 | Semáforo interactivo | `lib/screens/ex6_semaforo.dart` |
-| 7 | Formulario de registro de estudiante | `lib/screens/ex7_formulario_estudiante.dart` |
-| 8 | Lista de compras | `lib/screens/ex8_lista_compras.dart` |
-| 9 | Catálogo básico de productos | `lib/screens/ex9_catalogo_productos.dart` |
-| 10 | Aplicación de tareas pendientes | `lib/screens/ex10_tareas_pendientes.dart` |
+---
 
-Modelos de datos en `lib/models/` (`producto.dart`, `tarea.dart`).
+## 🎯 Objetivo del proyecto
 
-## Cómo correrlo en Android (Windows/Mac/Linux)
+El objetivo principal de este proyecto es **practicar Flutter y Dart** mediante la implementación de diferentes aplicaciones y funcionalidades.
 
-Este entorno de chat no tiene el SDK de Flutter instalado, así que el proyecto
-se entregó como código fuente. Para ejecutarlo en tu máquina:
+A través de los ejercicios se trabajan conceptos como:
 
-1. **Instala Flutter** siguiendo la guía oficial: https://docs.flutter.dev/get-started/install
-   (incluye Android Studio o al menos el Android SDK + un emulador o
-   dispositivo físico con depuración USB activada).
+* Creación y organización de interfaces.
+* Uso de widgets de Flutter.
+* Manejo de estado.
+* Entrada y validación de datos.
+* Formularios.
+* Listas.
+* Clases y objetos.
+* Navegación entre pantallas.
+* Manejo de eventos.
+* Uso de componentes interactivos.
 
-2. **Descomprime este proyecto** en una carpeta, por ejemplo `ejercicios_flutter/`.
+---
 
-3. Abre una terminal dentro de esa carpeta y genera los archivos de
-   plataforma (Android/iOS/etc.) que faltan, ya que aquí solo se incluye el
-   código Dart (`lib/`) y `pubspec.yaml`:
+## 📚 Ejercicios implementados
 
-   ```bash
-   flutter create .
-   ```
+### 1. 👤 Tarjeta de presentación personal
 
-   Esto no sobrescribe tu carpeta `lib/` ni tu `pubspec.yaml` existentes;
-   solo agrega `android/`, `ios/`, etc.
+Aplicación que muestra una tarjeta de presentación con los datos personales de una persona.
 
-4. Instala las dependencias:
+**Incluye:**
 
-   ```bash
-   flutter pub get
-   ```
+* Fotografía o avatar.
+* Nombre completo.
+* Profesión u ocupación.
+* Número de teléfono.
+* Correo electrónico.
+* Ciudad o país.
+* Breve descripción personal.
+* Información de contacto agrupada mediante una tarjeta.
 
-5. Conecta un dispositivo Android (o abre un emulador) y verifica que Flutter
-   lo detecta:
+**Widgets y conceptos utilizados:**
 
-   ```bash
-   flutter devices
-   ```
+`Scaffold` · `AppBar` · `Column` · `Row` · `CircleAvatar` · `Text` · `Icon` · `Card` · `Container`
 
-6. Corre la app:
+La fotografía se presenta de forma circular y la información se organiza de manera centrada y adaptable a la pantalla.
 
-   ```bash
-   flutter run
-   ```
+---
 
-7. Para generar el APK instalable:
+### 2. 👥 Contador de personas
 
-   ```bash
-   flutter build apk --release
-   ```
+Aplicación destinada a llevar el conteo de personas que entran y salen de un lugar.
 
-   El archivo quedará en `build/app/outputs/flutter-apk/app-release.apk`.
+**Funciones:**
 
-## Notas
+* ➕ Agregar una persona.
+* ➖ Restar una persona.
+* 🔄 Reiniciar el contador.
+* Evitar valores menores que cero.
+* Mostrar **"Capacidad alcanzada"** al llegar a 20 personas.
+* Solicitar confirmación antes de reiniciar.
 
-- Todos los ejercicios usan **estado local** (`setState`, `List` en memoria).
-  No requieren backend ni Firebase — al cerrar la app se pierde el estado,
-  tal como piden los requisitos originales.
-- Si más adelante quieres persistencia real (por ejemplo en los ejercicios 9
-  y 10), se puede añadir Firestore como mejora sin tocar la estructura de
-  pantallas.
+**Conceptos utilizados:**
 
-## Modo oscuro y paleta de colores
+* `StatefulWidget`
+* `setState`
+* Eventos de botones.
+* Condicionales.
+* `AlertDialog`
 
-- El switch de modo claro/oscuro está en el `AppBar` del menú principal
-  (`lib/main.dart`). Cambia `ThemeMode` a nivel de `MaterialApp`, por lo que
-  el modo oscuro se aplica **nativamente en toda la app** (todas las
-  pantallas, formularios, diálogos, etc. — no hay nada que configurar por
-  pantalla).
-- La paleta base es "Índigo nocturno" (`#3F4B8C`), definida en
-  `lib/theme/app_theme.dart` junto con 10 variantes sutiles (una por
-  ejercicio) generadas con `ColorScheme.fromSeed`. Cada pantalla se envuelve
-  en un widget `ThemedScreen` que aplica su variante respetando el modo
-  claro/oscuro activo.
-- Para cambiar la paleta base más adelante, solo hay que editar
-  `AppPalette.base` y las 10 constantes de variantes en
-  `lib/theme/app_theme.dart` — el resto de la app se actualiza solo.
+El contador comienza en cero y la interfaz se actualiza inmediatamente después de cada interacción.
 
-## Diseño responsive (teléfono / tablet / escritorio)
+---
 
-- **Menú principal** (`lib/main.dart`): la grilla usa `LayoutBuilder` para
-  medir el ancho disponible y ajustar automáticamente la cantidad de
-  columnas — 2 en teléfono, 3 en tablet vertical, 4 en tablet horizontal /
-  escritorio pequeño, 5 en escritorio grande. Además, el contenido se
-  centra y limita a un ancho máximo (`kMaxContentWidth`, 1100px) para que
-  las tarjetas no queden estiradas de borde a borde en monitores anchos.
-- **Ejercicio 6 (semáforo)**: el contenido está envuelto en
-  `Center` + `ConstrainedBox` con un ancho máximo de 420px, así que en
-  pantallas grandes el semáforo queda centrado en vez de pegado a una
-  esquina.
-- **Ejercicio 9 (catálogo)**: la grilla usa
-  `SliverGridDelegateWithMaxCrossAxisExtent` en lugar de un número fijo de
-  columnas — cada tarjeta de producto tiene un ancho máximo (220px) y
-  Flutter calcula solo cuántas caben por fila según el tamaño de la
-  pantalla, así que se ve bien tanto en un teléfono angosto como en un
-  monitor de escritorio.
-- **Formularios (ejercicios 3, 4, 5 y 7)**: se envolvieron en el widget
-  `ResponsiveFormBody` (`lib/theme/app_theme.dart`), que centra el
-  contenido y lo limita a 520px de ancho. Así, en tablet/escritorio el
-  formulario no se estira de borde a borde — se ve como una tarjeta
-  centrada, más cómoda de leer y llenar.
+### 3. 🎂 Calculadora de edad
 
-## Imágenes de producto (ejercicio 9)
+Aplicación que permite calcular aproximadamente la edad de una persona a partir de su año de nacimiento.
 
-- Cada producto del catálogo (`lib/models/producto.dart`) tiene un campo
-  `imagenUrl` con una foto de stock real (con licencia gratuita de
-  Unsplash — no requieren atribución, pero sí conexión a internet en
-  tiempo de ejecución para cargarse).
-- El widget `_ImagenProducto` (dentro de `ex9_catalogo_productos.dart`) usa
-  `Image.network` con `loadingBuilder` (muestra un spinner mientras carga)
-  y `errorBuilder` (si no hay conexión o la imagen falla, cae de vuelta al
-  icono del producto) — así la pantalla nunca se rompe si el dispositivo
-  está offline.
-- Si prefieres imágenes propias en vez de las de stock, basta con
-  reemplazar el valor de `imagenUrl` por otra URL, o migrar a
-  `Image.asset` empaquetando los archivos en `assets/` y declarándolos en
-  `pubspec.yaml`.
+**Datos de entrada:**
+
+* Nombre.
+* Año de nacimiento.
+
+**Funciones:**
+
+* Calcular la edad.
+* Validar que el nombre no esté vacío.
+* Validar el año introducido.
+* Verificar que el año no sea mayor que el año actual.
+* Verificar que el año sea mayor que 1900.
+* Mostrar mensajes de error.
+* Limpiar los campos.
+
+Para obtener el año actual se puede utilizar `DateTime.now().year`.
+
+**Conceptos utilizados:**
+
+* `TextField`
+* `TextFormField`
+* `TextEditingController`
+* Conversión de texto a números.
+* Validaciones.
+* Operaciones aritméticas.
+
+---
+
+### 4. 💰 Calculadora de propinas
+
+Aplicación para calcular el valor de la propina y el total que debe pagar un cliente.
+
+**Datos de entrada:**
+
+* Monto de la cuenta.
+* Porcentaje de propina.
+
+**Porcentajes disponibles:**
+
+* 5 %
+* 10 %
+* 15 %
+* 20 %
+
+**Resultados:**
+
+* Valor de la propina.
+* Total de la cuenta más la propina.
+
+Los resultados se muestran utilizando dos posiciones decimales.
+
+**Conceptos utilizados:**
+
+* Formularios.
+* Operaciones con números decimales.
+* Controles de selección.
+* Formateo de resultados.
+* Actualización de la interfaz.
+
+También incluye validación del monto y un botón para reiniciar la calculadora.
+
+---
+
+### 5. 🌡️ Conversor de temperatura
+
+Aplicación para realizar conversiones entre grados Celsius y Fahrenheit.
+
+**Conversiones disponibles:**
+
+```text
+Celsius → Fahrenheit
+Fahrenheit → Celsius
+```
+
+**Fórmulas utilizadas:**
+
+```text
+Fahrenheit = (Celsius × 9 / 5) + 32
+
+Celsius = (Fahrenheit - 32) × 5 / 9
+```
+
+**Funciones:**
+
+* Introducir una temperatura.
+* Seleccionar el tipo de conversión.
+* Validar que el valor sea numérico.
+* Mostrar el resultado con dos posiciones decimales.
+* Indicar la unidad del resultado.
+* Limpiar el resultado al cambiar el tipo de conversión.
+* Ejecutar la conversión mediante el botón **Convertir**.
+
+**Conceptos utilizados:**
+
+* Fórmulas matemáticas.
+* Controles de selección.
+* Validación de entradas.
+* Variables de estado.
+* Interpolación de cadenas.
+
+---
+
+### 6. 🚦 Semáforo interactivo
+
+Aplicación que simula el funcionamiento básico de un semáforo.
+
+El semáforo cuenta con tres luces:
+
+* 🔴 Rojo.
+* 🟡 Amarillo.
+* 🟢 Verde.
+
+El cambio de estado sigue el siguiente orden:
+
+```text
+Rojo → Verde → Amarillo → Rojo
+```
+
+Cada estado muestra un mensaje:
+
+| Estado      | Mensaje       |
+| ----------- | ------------- |
+| 🔴 Rojo     | Deténgase     |
+| 🟡 Amarillo | Prepárese     |
+| 🟢 Verde    | Puede avanzar |
+
+**Conceptos utilizados:**
+
+* Condicionales.
+* Manejo de estados.
+* Cambio dinámico de colores.
+* `Container`
+* `BoxDecoration`
+* `Column`
+
+El semáforo inicia en rojo y solamente una luz permanece activa a la vez.
+
+---
+
+### 7. 🧑‍🎓 Formulario de registro de estudiante
+
+Aplicación que permite registrar los datos básicos de un estudiante.
+
+**Campos:**
+
+* Matrícula.
+* Nombre completo.
+* Correo electrónico.
+* Carrera.
+* Edad.
+* Sexo.
+* Aceptación de términos y condiciones.
+
+El formulario valida los datos antes de permitir el registro y muestra un resumen de la información registrada.
+
+**Validaciones:**
+
+* Todos los campos son obligatorios.
+* La edad debe ser mayor que cero.
+* El correo debe contener `@` y un punto.
+* La carrera debe seleccionarse de una lista.
+* El sexo se selecciona mediante opciones.
+* Los términos deben ser aceptados.
+
+**Conceptos utilizados:**
+
+* `Form`
+* `GlobalKey<FormState>`
+* `validator`
+* `DropdownButtonFormField`
+* `RadioListTile`
+* `CheckboxListTile`
+
+---
+
+### 8. 🛒 Lista de compras
+
+Aplicación para registrar y administrar productos que una persona necesita comprar.
+
+Cada producto puede:
+
+* Ser agregado a la lista.
+* Marcarse como comprado.
+* Mostrar su nombre tachado cuando ha sido comprado.
+* Ser eliminado.
+* Ser eliminado mediante confirmación.
+
+También se muestra la cantidad de productos pendientes y existe una opción para eliminar todos los productos comprados.
+
+**Conceptos utilizados:**
+
+* Listas.
+* `ListView`
+* `ListView.builder`
+* `Checkbox`
+* Modelos de datos.
+* `setState`
+* Agregar, modificar y eliminar elementos.
+
+---
+
+### 9. 🛍️ Catálogo básico de productos
+
+Aplicación que muestra un catálogo sencillo de productos mediante tarjetas.
+
+Cada producto contiene:
+
+* Nombre.
+* Precio.
+* Descripción corta.
+* Imagen.
+* Categoría.
+
+Al seleccionar un producto se abre una segunda pantalla con sus detalles completos.
+
+**Productos contemplados:**
+
+* Computadora portátil.
+* Teléfono móvil.
+* Audífonos.
+* Teclado.
+* Reloj inteligente.
+
+**Conceptos utilizados:**
+
+* Clases y objetos en Dart.
+* Listas de objetos.
+* `ListView.builder`
+* `GridView.builder`
+* `Navigator`
+* Navegación entre pantallas.
+* Envío de datos entre pantallas.
+* Tarjetas reutilizables.
+
+---
+
+### 10. ✅ Aplicación de tareas pendientes
+
+Aplicación para administrar tareas personales.
+
+Cada tarea contiene:
+
+* Título.
+* Descripción.
+* Fecha límite.
+* Nivel de prioridad:
+
+  * Baja.
+  * Media.
+  * Alta.
+
+**Funciones:**
+
+* Visualizar tareas.
+* Agregar nuevas tareas.
+* Seleccionar fecha límite.
+* Seleccionar prioridad.
+* Marcar tareas como completadas.
+* Editar tareas.
+* Eliminar tareas.
+* Confirmar antes de eliminar.
+* Mostrar estadísticas.
+
+En la parte superior se muestran:
+
+* **Total de tareas.**
+* **Tareas pendientes.**
+* **Tareas completadas.**
+
+Las tareas completadas se muestran con el texto tachado.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+* **Flutter**
+* **Dart**
+* **Material Design**
+* Widgets de Flutter
+* `StatefulWidget`
+* `setState`
+* Formularios y validaciones
+* Listas y modelos de datos
+* Navegación con `Navigator`
+
+---
+
+## 📖 Conceptos practicados
+
+Durante el desarrollo de los ejercicios se practicaron diferentes fundamentos del desarrollo móvil con Flutter:
+
+* Estructura de una aplicación Flutter.
+* Creación y composición de widgets.
+* Diseño de interfaces.
+* `Scaffold` y `AppBar`.
+* Organización mediante `Column` y `Row`.
+* Manejo de imágenes.
+* Uso de `Card` y `Container`.
+* Manejo de estado.
+* `StatefulWidget`.
+* `setState`.
+* Eventos de botones.
+* Condicionales.
+* Formularios.
+* Validación de datos.
+* `TextEditingController`.
+* `TextField` y `TextFormField`.
+* `Checkbox`.
+* `RadioListTile`.
+* `DropdownButtonFormField`.
+* `AlertDialog`.
+* `showDatePicker`.
+* Listas.
+* `ListView.builder`.
+* `GridView.builder`.
+* Clases y objetos en Dart.
+* Navegación con `Navigator`.
+* Envío de datos entre pantallas.
+
+---
+
+## 📂 Estructura del proyecto
+
+La estructura general corresponde a una aplicación Flutter:
+
+```text
+proyecto/
+│
+├── android/
+├── ios/
+├── lib/
+│   └── main.dart
+│
+├── test/
+│
+├── web/
+├── windows/
+├── macos/
+├── linux/
+│
+├── pubspec.yaml
+└── README.md
+```
+
+La carpeta `lib` contiene el código principal de la aplicación y `main.dart` corresponde al punto de entrada del proyecto.
+
+---
+
+## 🚀 Instalación y ejecución
+
+### Requisitos
+
+Para ejecutar el proyecto se necesita tener instalado:
+
+* Flutter SDK
+* Dart SDK
+* Android Studio o Visual Studio Code
+* Un dispositivo físico o emulador compatible
+
+### Clonar el repositorio
+
+```bash
+git clone URL_DEL_REPOSITORIO
+```
+
+### Entrar al proyecto
+
+```bash
+cd NOMBRE_DEL_PROYECTO
+```
+
+### Instalar dependencias
+
+```bash
+flutter pub get
+```
+
+### Ejecutar la aplicación
+
+```bash
+flutter run
+```
+
+---
+
+## 🔍 Verificación del proyecto
+
+Para comprobar que el proyecto no presenta problemas de análisis:
+
+```bash
+flutter analyze
+```
+
+Para ejecutar las pruebas:
+
+```bash
+flutter test
+```
+
+---
+
+## 🎓 Información académica
+
+**Asignatura:** Tecnologías Móviles
+
+**Tecnología principal:** Flutter
+
+**Lenguaje:** Dart
+
+**Tipo de proyecto:** Proyecto académico individual
+
+**Objetivo:** Practicar Flutter y Dart mediante la implementación de los ejercicios establecidos en la asignación.
+
+---
+
+## 👤 Autor
+
+**Giovanny Bautista Castillo**
+
+---
+
+## 📌 Nota
+
+Este proyecto fue desarrollado con **fines académicos** para la asignatura **Tecnologías Móviles**, implementando los ejercicios planteados en la actividad y aplicando los conceptos fundamentales del desarrollo de aplicaciones móviles con Flutter y Dart.
